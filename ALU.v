@@ -72,7 +72,7 @@ always @* begin
 	    2'b01: temp_BI = ~BI;	// A-B
 	    2'b10: temp_BI = temp_logic;	// A+A
 	    2'b11: temp_BI = 0;		// A+0
-	endcase	
+	endcase
 end
 
 // HC9 is the half carry bit when doing BCD add
@@ -91,7 +91,7 @@ always @* begin
 	temp_h = temp_logic[8:4] + temp_BI[7:4] + temp_HC;
 end
 
-// calculate the flags 
+// calculate the flags
 always @(posedge clk)
     if( RDY ) begin
 	AI7 <= AI[7];
